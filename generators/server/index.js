@@ -10,15 +10,10 @@ module.exports = class extends ServerGenerator {
         const jhContext = (this.jhipsterContext = this.options.jhipsterContext);
 
         if (!jhContext) {
-            this.error(
-                `This is a JHipster blueprint and should be used only like ${chalk.yellow('jhipster --blueprint hibernate-envers')}`
-            );
+            this.error(`This is a JHipster blueprint and should be used only like ${chalk.yellow('jhipster --blueprint hibernate-envers')}`);
         }
 
         this.configOptions = jhContext.configOptions || {};
-
-        // This sets up options for this sub generator and is being reused from JHipster
-        jhContext.setupServerOptions(this, jhContext);
     }
 
     get initializing() {
